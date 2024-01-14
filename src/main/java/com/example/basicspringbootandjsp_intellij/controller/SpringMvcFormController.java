@@ -1,6 +1,7 @@
 package com.example.basicspringbootandjsp_intellij.controller;
 
 import com.example.basicspringbootandjsp_intellij.entity.Employee;
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -24,7 +25,15 @@ public class SpringMvcFormController {
 
 
     @RequestMapping(value = "/addEmployee", method = RequestMethod.POST)
-    public String submit(@ModelAttribute("employee") final Employee employee, final ModelMap model) {
+    public String submit(
+            @Valid @ModelAttribute("employee") final Employee employee,
+            final BindingResult result,
+            final ModelMap model) {
+
+        if (result.hasErrors()) {
+//            return "error";
+            return "employeeHome";
+        }
 
 //        model.addAttribute("name", employee.getName());
 //        model.addAttribute("contactNumber", employee.getContactNumber());

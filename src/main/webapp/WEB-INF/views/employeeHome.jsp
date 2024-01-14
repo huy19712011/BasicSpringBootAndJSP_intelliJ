@@ -13,6 +13,7 @@
         <tr>
             <td><form:label path="name">Name</form:label></td>
             <td><form:input path="name"/></td>
+            <td><form:errors path="name" cssStyle="color: red"></form:errors></td>
         </tr>
         <tr>
             <td><form:label path="id">Id</form:label></td>
