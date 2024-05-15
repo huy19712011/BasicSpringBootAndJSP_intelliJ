@@ -11,7 +11,7 @@ public class BasicSpringBootAndJspIntelliJApplication {
     public static void main(String[] args) {
         SpringApplication.run(BasicSpringBootAndJspIntelliJApplication.class, args);
         System.out.println("running...");
-        System.out.println(System.getProperty("java.io.tmpdir"));
+//        System.out.println(System.getProperty("java.io.tmpdir"));
     }
 
 }
